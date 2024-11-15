@@ -2,6 +2,7 @@ import readline from "readline";
 import {v4 as uuidv4} from "uuid";
 import createNewDatabase from "./createDatabase.js";
 import createNewStudent from "./createStudent.js";
+import updateStudentById from "./updateStudentById.js";
 
 
 const interfaz = readline.createInterface({
@@ -54,6 +55,33 @@ const preguntar = () => interfaz.question("porfavor ingrese una opcion\n1-crear 
 
 
                         createNewStudent(students)
+                    })
+                })
+            })
+        })
+
+        break;
+
+        case 3:
+
+        interfaz.question("porfavor ingrese el nombre del estudiante: ",(nombre) => {
+            interfaz.question("porfavor ingrese el apellido: " ,(apellido) => {
+                interfaz.question("porfavor ingrese la carrera: ",(carrera) => {
+                    interfaz.question("ingrese la edad" , (edad) => {
+                        interfaz.question("porfavor ingrese el id del estudiante", (id) => {
+
+                            const students = {
+                                    
+                                name: nombre,
+                                lastname: apellido,
+                                carrer: carrera,
+                                edad: parseInt(edad)
+                            }
+
+
+                    updateStudentById(id, students)
+
+                        })
                     })
                 })
             })

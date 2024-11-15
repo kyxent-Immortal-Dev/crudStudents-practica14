@@ -13,17 +13,16 @@ const createNewStudent = (dataUser) => {
 
         let myUsers = JSON.parse(data)
 
-        let getStudents = myUsers.students
 
-        getStudents.push(dataUser)
+        myUsers.students.push(dataUser)
 
-        fs.writeFile(myDb, JSON.stringify(getStudents), (error) => {
+        fs.writeFile(myDb, JSON.stringify(myUsers), (error) => {
             if (error) {
                 console.error("hubo un problema al crear el nuevo estudiante", error);
                 return;
             }
 
-            console.log("usuario creado exitosamente", getStudents);
+            console.log("usuario creado exitosamente", myUsers);
             
         })
 
