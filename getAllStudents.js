@@ -1,6 +1,7 @@
 
 const students = [{name :"ezequiel"}, {name:'hector'}]
 
+const techers= ['ezequiel']
 
 const getAllStudents = () => {
 
