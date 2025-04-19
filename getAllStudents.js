@@ -9,6 +9,10 @@ const getAllStudents = () => {
     try {
         
         console.log(students);
+        console.log(students);
+        console.log('hello world');
+        
+        
         
 
     } catch (error) {
